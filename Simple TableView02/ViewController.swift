@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var myTableView: UITableView!
     var animals = ["Cat","Dog","Bird","Pig","Horse","Whale"]
-    var year = ["3","5","10","2","6","3"]
+    var year = ["고양이","강아지","새","돼지","말","고래"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         //navigationBar
         self.title = "동물농장"
+        
     }
     
     // UITableViewDataSource Method
@@ -64,6 +65,24 @@ class ViewController: UIViewController, UITableViewDataSource {
         //image넣기
         cell.imageView?.image = UIImage(named: animals[row])
         return cell
+    }
+    
+    // DetailViewController의 myData 변수에 "Cat"을 생성
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addgo"{
+            let addVC = segue.destination as! AddViewController
+            addVC.myData = animals[0]
+            addVC.myImg = animals[0]
+            addVC.self.navigationItem.title = year[0]
+            
+        }else if segue.identifier == "detailgo"{
+            let detailVC = segue.destination as! DetailViewController
+            
+            // 현재 선택된 indexPath.row
+            let myIndexPath = myTableView.indexPathForSelectedRow
+            detailVC.mydata = animals[(myIndexPath?.row)!]
+            detailVC.myimg = animals[(myIndexPath?.row)!]
+        }
     }
 }
 

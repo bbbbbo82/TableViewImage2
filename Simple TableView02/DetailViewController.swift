@@ -9,9 +9,18 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    @IBOutlet weak var mylabel: UILabel!
+    @IBOutlet weak var myimage: UIImageView!
+    
+    
+    var mydata : String?
+    var myimg : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mylabel.text = mydata
+        myimage.image = UIImage(named: myimg!)
 
         // Do any additional setup after loading the view.
     }

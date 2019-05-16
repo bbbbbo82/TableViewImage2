@@ -46,7 +46,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Jwl-IM-tPb" kind="show" identifier="go" id="K7p-yY-foH"/>
+                                            <segue destination="Jwl-IM-tPb" kind="show" identifier="detailgo" id="K7p-yY-foH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -98,12 +98,39 @@
         <scene sceneID="vAr-Iy-JGw">
             <objects>
                 <viewController id="Jwl-IM-tPb" customClass="DetailViewController" customModule="Simple_TableView02" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TmX-5i-oGL">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="TmX-5i-oGL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label                      " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szu-W3-Av3">
+                                <rect key="frame" x="118" y="173" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ez9-qV-VdE">
+                                <rect key="frame" x="67" y="251" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="Wx1-gp-ffp"/>
+                                    <constraint firstAttribute="width" constant="240" id="gq2-EG-u5x"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.1630341219" green="1" blue="0.95735453020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ez9-qV-VdE" firstAttribute="centerX" secondItem="TmX-5i-oGL" secondAttribute="centerX" id="5Y4-Ov-4kL"/>
+                            <constraint firstItem="Szu-W3-Av3" firstAttribute="top" secondItem="iXL-2h-bA6" secondAttribute="top" constant="109" id="7Kk-6q-nRR"/>
+                            <constraint firstItem="Szu-W3-Av3" firstAttribute="centerX" secondItem="TmX-5i-oGL" secondAttribute="centerX" id="COg-Lp-udt"/>
+                            <constraint firstItem="iXL-2h-bA6" firstAttribute="bottom" secondItem="Ez9-qV-VdE" secondAttribute="bottom" constant="176" id="DEQ-1d-T7o"/>
+                            <constraint firstItem="Ez9-qV-VdE" firstAttribute="leading" secondItem="iXL-2h-bA6" secondAttribute="leading" constant="67" id="XAi-TS-Bl3"/>
+                            <constraint firstItem="Ez9-qV-VdE" firstAttribute="top" secondItem="Szu-W3-Av3" secondAttribute="bottom" constant="57" id="h6x-tg-Zac"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iXL-2h-bA6"/>
                     </view>
+                    <connections>
+                        <outlet property="myimage" destination="Ez9-qV-VdE" id="EXD-Ug-ZaI"/>
+                        <outlet property="mylabel" destination="Szu-W3-Av3" id="zye-9l-TRv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tru-5r-2wr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,9 +143,37 @@
                     <view key="view" contentMode="scaleToFill" id="GfX-ZY-yNv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label      " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MN-Qs-Vbc">
+                                <rect key="frame" x="154" y="195" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KFW-gd-Omw">
+                                <rect key="frame" x="67" y="245" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="240" id="Aaa-ld-4Dp"/>
+                                    <constraint firstAttribute="width" constant="240" id="C75-Cx-obW"/>
+                                    <constraint firstAttribute="height" constant="240" id="iiy-0a-1FV"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KFW-gd-Omw" firstAttribute="leading" secondItem="h3A-PG-CwD" secondAttribute="leading" constant="67" id="IBA-rn-t1b"/>
+                            <constraint firstItem="6MN-Qs-Vbc" firstAttribute="leading" secondItem="h3A-PG-CwD" secondAttribute="leading" constant="154" id="Ii6-TW-P4o"/>
+                            <constraint firstItem="KFW-gd-Omw" firstAttribute="top" secondItem="6MN-Qs-Vbc" secondAttribute="bottom" constant="29" id="S8B-Bk-Mwm"/>
+                            <constraint firstItem="6MN-Qs-Vbc" firstAttribute="top" secondItem="h3A-PG-CwD" secondAttribute="top" constant="131" id="aeG-Hi-0M7"/>
+                            <constraint firstItem="6MN-Qs-Vbc" firstAttribute="centerX" secondItem="GfX-ZY-yNv" secondAttribute="centerX" id="fCX-Uh-MZ4"/>
+                            <constraint firstItem="KFW-gd-Omw" firstAttribute="centerX" secondItem="GfX-ZY-yNv" secondAttribute="centerX" id="xdN-iN-t7m"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="h3A-PG-CwD"/>
                     </view>
+                    <connections>
+                        <outlet property="myImage" destination="KFW-gd-Omw" id="3UX-Ka-5Er"/>
+                        <outlet property="myLabel" destination="6MN-Qs-Vbc" id="IlA-cR-9Xe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGD-O9-ahu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
